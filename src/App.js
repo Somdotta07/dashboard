@@ -1,12 +1,23 @@
 import './App.css';
-import Header from './components/Header/header';
-import Navigation from './components/Navigation/navigation';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './Components/Home';
+import Products from './Components/Products';
+import Sidebar from './Components/Sidebar';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Navigation />
+      <h1>Header</h1>
+      <BrowserRouter>
+        <Sidebar>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+          </Routes>
+        </Sidebar>
+      </BrowserRouter>
+      
+   
     </div>
   );
 }
